@@ -1,0 +1,162 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-color:#4468D6;
+	font-size:16px;
+	font-family: "宋体";
+}
+/*澶撮儴*/
+#top{
+	width:1365px;
+	height:150px;
+	/*border:#ccc solid 1px;*/
+	background-image: url(../img/submit.png);
+	/*border-bottom: #4468D6 solid 1px;*/
+}
+#top .text{
+	width:500px;
+	height:150px;
+	/*border:red solid 1px;*/
+	float:right;
+	text-align: center;
+}
+#top .shouye{
+	width:80px;
+	height:40px;
+	line-height: 40px;
+	border-radius: 10px;
+	background-color:#0C2D2E;
+	color:white;
+	float:right;
+	margin-right:20px;
+	margin-top:20px;
+	text-align:center;
+}
+#top .text h1{
+	margin-top:75px;
+	color:#0C2D2E;
+	font-family:"宋体";
+	font-weight: 800;
+	font-size:36px;
+}
+/*韬綋閮ㄥ垎*/
+#body{
+	width:1349px;
+	height:520px;
+	margin-top:8px;
+	margin-right: 5px;
+	margin-left: 5px;
+	background-color:#F0F0F0;
+	border:#00B0FF solid 3px;
+}
+#body .tishi-text{
+	width:500px;
+	height:490px;
+	/*border:red solid 1px;*/
+	float:left;
+}
+#body .tishi-text .tishi-img{
+	width:400px;
+	height:490px;
+	margin:auto;
+	background-image: url(../img/text.png);
+	background-size:400px 490px;
+	position:relative;
+}
+.top-text{
+	width:400px;
+	height:32px;
+	line-height: 32px;
+	font-size:32px;
+	color:white;
+	position:absolute;
+	top:150px;
+	left:50px;
+	font-family: "楷体";
+}
+.body-text{
+	width:400px;
+	height:16px;
+	line-height: 16px;
+	font-size:16px;
+	color:white;
+	position:absolute;
+	top:200px;
+	left:50px;
+	font-family: "楷体";
+}
+#body .table{
+	width:680px;
+	height:520px;
+	/*border:red solid 1px;*/
+	float:right;
+}
+#body .form-table{
+	padding-left:40px;
+	padding-top:20px;
+	font-size: 16px;
+	font-weight: 600;
+}
+#body .form-table tr{
+	width:360px;
+	height:45px;
+}
+#body .form-table .xinxi{
+	width:360px;
+	height:35px;
+	border:#00B0FF solid 1px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+#body .form-table .textarea{
+	border:#00B0FF solid 1px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+#body .form-table .select{
+	width:360px;
+	height:35px;
+	border:#00B0FF solid 1px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.buttom{
+	width:80px;
+	height:40px;
+	background-color:#0C2D2E ;
+	border-radius: 5px;
+}
+.buttom-xinxi{
+	margin-left: 150px;
+	margin-top:10px;
+}
+.buttom-xinxi .buttom{
+	margin-right: 100px;
+}
+
+/*鑴�*/
+#footer{
+	width:1365px;
+	height:50px;
+	background-color: #F0F0F0;
+	margin-top:5px;
+	/*border:red solid 1px;*/
+}
+#footer .footer-text{
+	width:500px;
+	height:50px;
+	line-height: 50px;
+	font-size:26px;
+	font-weight: 800;
+	font-family: "楷体";
+	text-align:center;
+	margin:auto;
+}
+
+/*琛ㄥ崟鏍峰紡*/
+.high{
+	color:red;
+}
+

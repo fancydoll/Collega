@@ -1,0 +1,118 @@
+body{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑";
+}
+.dec{
+	width:100%;
+	height:100px;
+	background-image:url(../img/fg3.jpg);
+}
+.dec i{
+	font-size:35px;
+	color:#F7F7F7;
+	line-height: 110px;
+	margin-left:125px;
+}
+.nav{
+	width:100%;
+	height:80px;
+	background-color:#02578E;
+	margin-top:-16px;
+}
+.nav ul{
+	margin-left:120px;	
+}
+.nav ul li{
+	display:inline-block;
+	font-size:20px;
+	width: 125px;
+	text-align: center;
+	margin: 25px 20px 0 20px;
+}
+.nav ul li a{
+	color:white;
+	text-decoration: none;
+}
+.nav ul li a:hover{
+	color:black;
+}
+.sence{
+	width:1200px;
+	height:1150px;
+	margin-left:75px;
+	margin-top:30px;
+	border:solid 2px #DDD;
+}
+.sence img{
+	width:100%;
+	height:200px;
+	border-radius:10px;
+}
+.sence1{
+	width:1180px;
+	height:800px;
+	margin-top:20px;
+	margin-left:8px;
+	border:solid 2px #DDD;
+	border-radius:10px;
+}
+.sence2{
+	width:250px;
+	height:240px;
+	display:inline-block;
+	margin-top:20px;
+	margin-left:30px;
+}
+.photo{
+	width:250px;
+	height:200px;
+	text-align:center;
+	border:solid 2px #DDD;
+}
+.photo span{
+	line-height: 50px;
+}
+.weiba{
+	width:800px;
+	height:80px;
+	margin-left:200px;
+	margin-top:30px;
+	text-align:center;
+}
+.weiba span{
+	line-height:25px;
+	font-size:13px;
+}
+.tubiao{
+	width:38px;
+	height:38px;
+	background-color:#0099CC;
+	border-radius:20px;
+	position:fixed;
+	bottom:60px;
+	right:40px;
+	display:none;
+	
+}
+.tubiao img{
+	width:20px;
+	height:20px;
+	margin-top:6px;
+	margin-left:8px;
+}
+.tubiao1{
+	width:38px;
+	height:38px;
+	background-color:#0099CC;
+	border-radius:20px;
+	position:fixed;
+	bottom:15px;
+	right:40px;
+}
+.tubiao1 img{
+	width:20px;
+	height:20px;
+	margin-top:6px;
+	margin-left:8px;
+}

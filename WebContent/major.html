@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>专业设置</title>
+		<link rel="stylesheet" type="text/css" href="css/major.css"/>
+		<script src="js/jquery-3.1.0.js"></script>
+		<script src="js/vue.js"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function($) {
+				  $(window).scroll(function(){
+					  	var v=$(window).scrollTop();
+					  	if(v>100){
+					  		$("#jiantou").fadeIn(500);
+					  	}
+					  	else{
+					  		$("#jiantou").fadeOut(500);
+					  	}
+				  });
+			//获取学院专业
+			var ipage = 1;
+			var items;
+			var xid = 1;
+			var flag = 1;
+			function findMajor(xid,ipage){
+				$.ajax({
+					   type: "POST",
+					   url: "findMajor",
+					   async: false,
+					   data: "xid="+xid+"&ipage="+ipage, 
+					   success: function(msg){   
+					     items = eval("("+msg+")");
+					   }
+					});
+			}
+			
+			findMajor(xid,ipage);
+			
+			var ma = new Vue({
+			    el: '#findMajor',
+			    data:{
+					   major:items
+				   }
+			});
+			
+		//	首页和下一页的点击
+			$(".next").click(function(){
+				  ipage++;
+//				    显示加载动画
+				  findMajor(xid,ipage);
+				  if(items == ""){
+						flag = 0;
+					}
+				  if(flag == 0){
+						$(".next").hide();
+					}
+				  $(".out-body").show();
+				  $(".majorselect").hide();
+				  setTimeout(major2,1000);
+				  ma.$set(ma.$data,"major",items);
+			});
+			$(".top").click(function(){
+				ipage = 1;
+				$(".next").show();
+				$(".out-body").show();
+				findMajor(xid,ipage);
+				$(".majorselect").hide();
+				setTimeout(major2,1000);
+				ma.$set(ma.$data,"major",items);
+			});
+			function major2(){
+				$(window).scrollTop(100);
+				$(".majorselect").show();
+				$(".out-body").hide();
+			}
+			
+		//	获取不同的学院
+		$(".xueyuan li").click(function(){
+			flag = 1;
+			ipage = 1;
+			xid = $(this).attr("xid");
+			findMajor(xid,ipage);
+			ma.$set(ma.$data,"major",items);
+		});
+		});
+		</script>
+	</head>
+	<body>
+		<div class="dec">
+			<i>某某大学</i>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">网站首页</a></li>
+				<li><a href="sdesc.html">学校简介</a></li>
+				<li><a href="schoolsence.html">校园风光</a></li>
+				<li><a href="schoolnews.html">校内新闻</a></li>
+				<li><a href="major.html">专业设置</a></li>
+				<li><a href="baoming.html">网上报名</a></li>
+			</ul>
+		</div>
+		<div class="select">
+			<div class="nav2">
+				<ul class="xueyuan">
+					<li xid="1"><a href="#">计算机学院</a></li>
+					<li xid="2"><a href="#">外国语学院</a></li>
+					<li xid="3"><a href="#">冶金工程学院</a></li>
+					<li xid="4"><a href="#">财经学院</a></li>
+					<li xid="5"><a href="#">文学与新闻传播学院</a></li>
+				</ul>
+			</div>	
+			<div class="out-body">
+				<div class="in-body">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="majorselect" id="findMajor">
+			 <div v-for="(m,index) in major" class="styleDiv">
+				<div class="select1"  v-if="index%2===0">
+					<div class="selectimg">
+						<img v-bind:src="m.img" />
+					</div>
+					<div class="selectword">
+						<h3>{{m.name}}</h3>
+						<p>{{m.desc}}</p>
+					</div>
+				</div>
+				<div class="select1" v-else>
+					<div class="selectword1">
+						<h3>{{m.name}}</h3>
+						<p>{{m.desc}}</p>
+					</div>
+					<div class="selectimg1">
+						<img :src="m.img"/>
+					</div>
+				</div>
+			 </div>
+			 <div class="but">
+					<button class="top">首页</button>
+					<button class="next">下一页</button>
+				</div>
+			</div>
+			<div class="weiba">
+				<span>版权所有@湖南工业大学(www.hut.edu.cn) @1997-2014 Copyright by HUT and All Rights Reserved </span><br />
+				<span>湘ICP备13010630号 - 湘教QS4_201211_020005 电子邮箱：zsb@hut.edu.cn</span><br />
+				<span>通讯地址：湖南省株洲市天元区泰山西路 邮政编码：412007</span>
+			</div>
+		</div>
+		<div  id="jiantou" class="tubiao">
+			<a href="#top">
+			<img src="img/箭头白.png"/>
+			</a>
+		</div>
+		<div class="tubiao1">
+			<img src="img/联系icon.png"/>	
+		</div>
+	</body>
+</html>

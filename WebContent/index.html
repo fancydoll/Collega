@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>学校首页</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"  />
+	    <script src="js/jquery-3.1.0.js"></script>
+	    <script src="js/vue.js"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function($) {
+				  $(window).scroll(function(){
+					  	var v=$(window).scrollTop();
+					  	if(v>100){
+					  		$("#jiantou").fadeIn(500);
+					  	}
+					  	else{
+					  		$("#jiantou").fadeOut(500);
+					  	}
+				  });
+				//新闻渲染  
+			 var ipage=1;
+			 var items;
+			  function getMajor(ipage){
+					$.ajax({
+						   type: "POST",
+						   url: "getMajor",
+						   async: false,
+						   data: "ipage="+ipage, 
+						   success: function(msg){   
+						     items = eval("("+msg+")");
+						   }
+						});
+				}
+				
+				getMajor(ipage);
+				
+				var major = new Vue({
+				    el: '#managerMajor',
+				    data:{
+						   major:items
+					   }
+				});
+				
+				//获取新闻
+				var typeid = 1;
+				var ipage2 = 1;
+				function getHot(typeid,ipage2){
+					$.ajax({
+						   type: "POST",
+						   url: "hotnews",
+						   async: false,
+						   data: "typeid="+typeid+"&ipage="+ipage2, 
+						   success: function(msg){   
+						     items2 = eval("("+msg+")");
+						   }
+						});
+				}
+				
+				getHot(1,ipage2);
+				
+				var hot = new Vue({
+				    el: '#getHotTable',
+				    data:{
+						   news:items2
+					   }
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<a class="top">	</a>
+		<div class="toubu">
+			<i>某某大学官网</i>
+		</div>
+		<div class="jumu">
+		<!--导航条开始-->
+			<div class="nav">
+				<ul>
+					<li><a href="index.html">网站首页</a></li>
+					<li><a href="sdesc.html">学校简介</a></li>
+					<li><a href="schoolsence.html">校园风光</a></li>
+					<li><a href="schoolnews.html">校内新闻</a></li>
+					<li><a href="major.html">专业设置</a></li>
+					<li><a href="baoming.html">网上报名</a></li>
+				</ul>
+			</div>
+		<!--导航条结束-->
+		<!--轮播图开始-->
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	            <!-- Indicators -->
+	            <ol class="carousel-indicators">
+	            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+	            </ol>
+            	<!-- Wrapper for slides -->
+		        <div class="carousel-inner" role="listbox">
+		            <div class="item active" id="lunbo">
+		                <img src="img/1.jpg">
+		              	<div class="carousel-caption">
+		            	</div>
+		            </div>
+		            <div class="item" id="lunbo">
+		                <img src="img/2.jpg">
+		            	<div class="carousel-caption">
+		            	</div>
+		            </div> 
+		            <div class="item" id="lunbo">
+		                <img src="img/3.jpg">
+		            	<div class="carousel-caption">
+		            	</div>
+		            </div>
+		            <div class="item" id="lunbo">
+		                <img src="img/4.jpg">
+		            	<div class="carousel-caption">
+		            	</div>
+		            </div>
+		        </div>
+	            <!-- Controls -->
+	            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	            <span aria-hidden="true"></span>
+	            <span class="sr-only">Previous</span>
+	            </a>
+	            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	            <span aria-hidden="true"></span>
+	            <span class="sr-only">Next</span>
+	            </a>
+        	</div>
+		<!--轮播图结束-->
+        </div>
+        <!--内容开始-->
+        <div class="content">
+        	<div class="news">
+        		<img src="img/5.jpg" />
+        		<span>校内新闻</span>
+        		<img src="img/a1.jpg" width="430" height="10"/> 
+        		<a href="schoolnews.html">MORE+</a><br />
+        		<div class="news-left">
+        			<img src="img/news1.jpg" width="300" height="280"/>
+        		</div>
+        		<div class="news-right" id="getHotTable">
+        			<table class="t1">
+        				<tr class="ti" v-for="n in news">
+        					<td width="50"><img src="img/8.jpg"/></td>
+        					<td class="t2-td">{{n.title}}</td>
+        				</tr>
+        			</table>
+        		</div>
+        	</div>
+        	<div class="students" id="managerMajor">
+        		<img src="img/9.jpg"/>	
+        		<span>专业介绍</span>
+        		<img src="img/a2.jpg" width="220"/>
+        		<a href="major.html">MORE+</a><br />
+        			<table class="t2" >
+        				<tr  v-for="m in major">
+        					<td><img src="img/11.jpg"/></td>
+        					<td class="t2-td">{{m.desc}}</td>
+        				</tr>
+        			</table>
+        	</div>
+        </div>
+        <!--内容结束-->
+        <!--尾部开始-->
+        <div class="weibu">
+        	<img src="img/weibu.png"/>   			<div class="weibu1">
+	        	<span>湘ICP备13010630号 - 湘教QS4_201211_020005</span>
+	        	<span>电子邮箱：zsb@hut.edu.cn</span>
+	        	<span>通讯地址：湖南省株洲市天元区泰山西路</span>
+	        	<span>邮政编码：412007</span>
+        	</div>
+        </div>
+        <!--尾部结束-->
+        <div  id="jiantou" class="tubiao">
+			<a href="#top">
+			<img src="img/箭头白.png"/>
+			</a>
+		</div>
+		<div class="tubiao1">
+			<a href="houtai.html">
+			<img src="img/联系icon.png"/>	
+			</a>
+		</div>
+	</body>
+</html>
+	

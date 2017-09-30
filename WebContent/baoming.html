@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>某某大学网上报名</title>
+		<script src="js/jquery.js"></script>
+		<link href="css/baoming.css" rel="stylesheet" />
+		<script src="js/baoming.js"></script>
+		<style>
+		 	a{
+		 		text-decoration:none;
+		 		font-size:16px;
+		 		color:white;
+		 	}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="top">
+				<div class="shouye">
+					<p><a href="index.html">回到首页</a></p>
+				</div>
+				<div class="text">
+					<h1>某某大学报名系统</h1>
+				</div>
+			</div>
+			<div id="body">
+				<div class="tishi-text">
+					<div class="tishi-img">
+						<div class="top-text">温馨提示</div>
+						<br />
+						<div class="body-text">欢迎填写某某大学招生信息
+						<br/>期待您的加入<br />
+						<br/><span style="color:red;font-size:20px">“*”为必填信息</span></div>
+					</div>
+				</div>
+				<form method="post">
+				<div class="table">
+				    <table class="form-table">
+					<tr>
+						<td>专业：</td>
+						<td>
+							<select class="select course">
+								<option>java</option>
+								<option>c++</option>
+								<option>android</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>姓名:</td>
+						<td><input type="text" class="xinxi name" required="required"
+							required-msg="姓名不能为空" minLength="1" maxLength="6"></td>
+					</tr>
+					<tr>
+						<td>性别：</td>
+						<td>
+							<select class="select sex">
+								<option>男</option>
+								<option>女</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>年龄:</td>
+						<td><input type="text" class="xinxi age" check-type="int"
+							 check-type-msg="请输入正确年龄" min="12" max="22"/></td>
+					</tr>
+					<tr>
+						<td>毕业学校</td>
+						<td><input type="text" class="xinxi School" required="required"
+							required-msg="毕业学校不能为空"/></td>
+					</tr>
+					<tr>
+						<td>家庭住址:</td>
+						<td><input type="text" class="xinxi address" required="required"
+							required-msg="家庭住址不能为空"/></td>
+					</tr>
+					<tr>
+						<td>手机号码:</td>
+						<td><input type="text" class="xinxi tell" check-type="mobile"
+							 check-type-msg="请输入正确号码"/></td>
+					</tr>
+					<tr>
+						<td>备注:</td>
+						<td><textarea class="textarea" cols="42" rows="5"></textarea></td>
+					</tr>
+					</table>
+					<div class="buttom-xinxi">
+						<input class="buttom submit" type="submit" value="提交"/>
+						<input class="buttom" type="reset" value="重置"/>
+					</div>
+				</div>
+			</form>
+			</div>
+			<div id="footer">
+				<div class="footer-text">某某大学欢迎您~</div>
+			</div>
+		</div>
+	</body>
+</html>

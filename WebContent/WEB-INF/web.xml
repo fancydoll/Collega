@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>Student</servlet-name>
+    <servlet-class>Server.webServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Student</servlet-name>
+    <url-pattern>/student</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>news</servlet-name>
+    <servlet-class>Server.newsServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>news</servlet-name>
+    <url-pattern>/news</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>hotnews</servlet-name>
+    <servlet-class>Server.getHotServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hotnews</servlet-name>
+    <url-pattern>/hotnews</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>deletenew</servlet-name>
+    <servlet-class>Server.deleteNewServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deletenew</servlet-name>
+    <url-pattern>/deletenew</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>findStudent</servlet-name>
+    <servlet-class>Server.findStudentServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findStudent</servlet-name>
+    <url-pattern>/findStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>deleteStudent</servlet-name>
+    <servlet-class>Server.deleteStudentServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteStudent</servlet-name>
+    <url-pattern>/deleteStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>setMajor</servlet-name>
+    <servlet-class>Server.setMajorServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>setMajor</servlet-name>
+    <url-pattern>/setMajor</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>findXueyuan</servlet-name>
+    <servlet-class>Server.findXueyuanServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findXueyuan</servlet-name>
+    <url-pattern>/findXueyuan</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>getMajor</servlet-name>
+    <servlet-class>Server.getMajorServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getMajor</servlet-name>
+    <url-pattern>/getMajor</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>deleteMajor</servlet-name>
+    <servlet-class>Server.deleteMajorServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteMajor</servlet-name>
+    <url-pattern>/deleteMajor</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>findMajor</servlet-name>
+    <servlet-class>Server.findMajorServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findMajor</servlet-name>
+    <url-pattern>/findMajor</url-pattern>
+  </servlet-mapping>
+</web-app>
